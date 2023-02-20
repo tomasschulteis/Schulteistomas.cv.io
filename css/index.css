@@ -1,0 +1,627 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;1,100;1,200;1,600&family=Raleway:wght@200;300;400;500&family=Righteous&family=Roboto+Serif:opsz,wght@8..144,100&family=Suravaram&family=Work+Sans:wght@100;300;400;600;800&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Work Sans';
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/*header*/
+.contenedor-header {
+    background: #1e2326;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 99;
+}
+
+.contenedor-header header{
+    max-width: 1100px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+}
+
+.contenedor-header header ul {
+    display: flex;
+    list-style: none;
+}
+
+.contenedor-header header nav ul li a{
+    text-align: none;
+    color: #fff;
+    margin: 0 15px;
+    padding: 3px;
+    transition: .5s;
+    text-decoration: none;
+}
+
+.contenedor-header header nav ul li a:hover {
+    color: #137DC5;
+}
+
+.nav-responsive{
+    background-color: #137DC5;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: none;
+}
+
+/*home*/
+
+.home {
+  background: linear-gradient(to top, rgba(30,35,38,.8), rgba(30,35,38,1)),
+  url(../assets/img/fondocv.jpg);
+  background-size: cover;
+  height: 100vh;
+  color: #fff;
+  display: flex;
+  align-items: center;
+}
+
+.home .content-banner {
+    padding: 20px;
+    background-color: #1e2326;
+    max-width: 350px;
+    margin: auto;
+    text-align: center;
+    border-radius: 40px;
+}
+
+.home .content-banner img {
+    margin-top: 40px;
+    border: 10px solid #137DC5;
+    display: block;
+    width: 80%;
+    margin: auto;
+    border-radius: 100%;
+}
+
+.home .content-banner h1{
+    margin-top: 40px;
+    font-size: 42px;
+    font-family: 'Righteous';
+}
+
+.home .content-banner h2{
+    font-size: 15px;
+    font-weight: normal;
+}
+
+.home .content-banner .social a{
+    color: #fff;
+    display: inline-block;
+    text-decoration: none;
+    border: 1px solid #fff;
+    border-radius: 100%;
+    width: 42px;
+    height: 42px;
+    line-height: 42px;
+    margin: 40px 5px;
+    font-size: 2.px;
+    transition: .3s;
+}
+
+.home .content-banner .social a:hover {
+    background-color: #137DC5;
+}
+
+/* About Me */
+
+.aboutme{
+    background-color: #1e2326;
+    color: #fff;
+    padding: 50px 20px;
+}
+
+.aboutme .content-section {
+    max-width: 1100px;
+    margin: auto;
+}
+
+.aboutme h2 {
+    font-size: 48px;
+    font-family: 'Righteous';
+    text-align: center;
+    padding: 20px 0;
+}
+
+.aboutme .content-section p {
+    font:  18px;
+    line-height: 22px;
+    margin-bottom: 20px;    
+}
+
+.aboutme .content-section p span{
+   color: #137DC5;
+   font-weight: bold;
+}
+
+.aboutme .row{
+    display: flex;
+}
+
+.aboutme .row .col{
+    width: 50%;
+}
+
+.aboutme .row .col h3 {
+    font-size: 28px;
+    font-family: 'Righteous';
+    margin-bottom: 25px;
+}
+
+.aboutme .row .col ul {
+    list-style: none;
+}
+
+.aboutme .row .col ul li{
+    margin: 12px 0;
+}
+
+.aboutme .row .col ul li strong{
+    display: inline-block;
+    color: #137DC5;
+    width: 130px;
+}
+
+.aboutme .row .col ul li span{
+    background-color: #137DC5;
+    padding: 3px;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.aboutme .row .col .content-tecnology{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.aboutme .row .col .content-tecnology .tecnology{
+    width: 100px;
+    height: 100px;
+    background-color: #252a2e;
+    border-radius: 10px;
+    margin: 0 15px 15px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: .3s;
+
+}.aboutme .row .col .content-tecnology .tecnology:hover{
+    background-color: #137DC5;
+}
+
+.aboutme .row .col .content-tecnology .tecnology i{
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.aboutme button{
+    cursor: pointer;
+    background-color: transparent;
+    border: 2px solid #fff;
+    width: fit-content;
+    display: block;
+    margin: 20px auto;
+    padding: 10px 22px;
+    font-size: 16px;
+    color: #fff;
+    position: relative;
+    z-index: 10;
+}
+
+
+
+.aboutme button .overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: #137DC5;
+    z-index: -1;
+    transition: 1s;
+}
+
+.aboutme button:hover .overlay{
+    width: 100%;
+}
+
+/* section-Personal Resume*/
+
+.personalresume{
+    background-color: #1e2326;
+    color: #fff;
+    padding: 50px 20px;
+}
+
+.personalresume .content-section{
+    max-width: 1100px;
+    margin: auto;
+}
+
+.personalresume h2 {
+    font-size: 48px;
+    font-family: 'Righteous';
+    text-align: center;
+    padding: 20px 0;
+}
+
+.personalresume .row{
+    display: flex;
+    justify-content: space-between;
+}
+
+.personalresume .row .col {
+    width: 49%;
+    padding: 0 20px;
+}
+
+.personalresume .row .col h3 {
+    font-size: 28px;
+    font-family: 'Righteous';
+    margin-bottom: 25px;
+}
+
+.personalresume .row .left {
+    border-right: 2px solid #252a2e;
+}
+
+.personalresume .row .right {
+    border-right: 2px solid #252a2e;
+}
+
+.personalresume .row .item {
+    padding: 25px;
+    margin-bottom: 30px;
+    background-color: #252a2e;
+    position: relative;
+}
+
+.personalresume .row .item h4 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.personalresume .row .item .name {
+    color: #137DC5;
+    font-size: 22px;
+    font-weight: bold;
+    display: block;
+}
+
+.personalresume .row .item .date{
+    display: block;
+    color: #137DC5;
+    margin-bottom: 10px;
+}
+
+.personalresume .row .item p {
+    line-height: 24px;
+}
+
+.personalresume .row .leftt{
+    border-right: 2px solid #137DC5;
+    margin-right: 20px;
+}
+
+.personalresume .row .righ{
+    border-left: 2px solid #137DC5;
+    margin-left: 20px;
+}
+
+.personalresume .row .item .connectorl{
+    height: 2px;
+    background-color: #137DC5;
+    width: 47px;
+    position: absolute;
+    top: 50%;
+    right: -47px;
+    z-index: 5;
+} 
+
+.personalresume .row .item .connectorl .circlel{
+    display: block;
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    background-color: #137DC5;
+    float: right;
+    position: relative;
+    bottom: 4px;
+}
+
+.personalresume .row .item .connectorr{
+    height: 2px;
+    background-color: #137DC5;
+    width: 47px;
+    position: absolute;
+    top: 50%;
+    left: -47px;
+    z-index: 5;
+} 
+
+.personalresume .row .item .connectorr .circler{
+    display: block;
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    background-color: #137DC5;
+    float: left;
+    position: relative;
+    bottom: 4px;
+}
+
+/* portfolio */
+
+.portfolioo{
+    background-color: #1e2326;
+    color: #fff;
+    padding: 50px 20px;
+}
+
+.portfolioo .content-section{
+    max-width: 1100px;
+    margin: auto;
+}
+
+.portfolioo h2 {
+    font-size: 48px;
+    font-family: 'Righteous';
+    text-align: center;
+    padding: 20px 0;
+}
+
+.portfolioo .gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.portfolioo .gallery .project{
+    position: relative;
+    max-width: 340px;
+    height: fit-content;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.portfolioo .gallery .project img{
+    width: 100%;
+    display: block;
+}
+
+.portfolioo .gallery .project .overlay{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    background: linear-gradient(rgba(19, 125, 197,.8), rgba(19, 125, 197,.8));
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: 1s;
+    font-size: 18px;
+    letter-spacing: 3px;
+    opacity: 0;
+    
+}
+
+.portfolioo .gallery .project .overlay a{
+    text-decoration: none;
+    color: #fff;
+}
+
+.portfolioo .gallery .project .overlay:hover h3{
+  margin-bottom: 20px;
+  transition: 1s;
+}
+
+.portfolioo .gallery .project .overlay:hover {
+    opacity: 1;
+}
+
+.portfolioo .gallery .project .overlay:hover h3 {
+    margin-bottom: 0px;
+}
+
+/*contact */
+
+.contactt {
+    background-color: #1e2326;
+    color: #fff;
+    padding: 50px 0;
+}
+
+.contactt .content-section{
+    max-width: 1100px;
+    margin: auto;
+}
+
+.contactt h2 {
+    font-size: 48px;
+    font-family: 'Righteous';
+    text-align: center;
+    padding: 20px 0;
+}
+
+.contactt .row {
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    justify-content: center;  
+    margin-bottom: 50px; 
+}
+
+.contactt .row .col input, .contactt .col textarea{
+    display: block;
+    width: 100%;
+    padding: 18px;
+    border: none;
+    margin-bottom: 10px;
+    background-color: #252a2e;
+    color: #fff;
+    font-size: 18px;
+}
+
+
+
+
+
+
+
+.contactt button {
+    cursor: pointer;
+    background-color: transparent;
+    border: 2px solid #fff;
+    width: fit-content;
+    display: block;
+    margin: 20px auto;
+    padding: 20px 0;
+    font-size: 16px;
+    color: #fff;
+    position: relative;
+    z-index: 10;
+    
+}
+
+.contactt button .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: #137dc5cc;
+    z-index: -1;
+    transition: 1s;
+}
+
+.contactt button:hover .overlay {
+    width: 100%;
+}
+
+/*footer*/
+
+footer {
+    background-color: #252a2e;
+    color: #fff;
+    padding: 50px 0 30px 0;
+    text-align: center;
+    position: relative;
+    width: 100%;
+}
+
+.footer .social {
+    margin-bottom: 20px;
+}
+
+footer .social a{
+    color: #fff;
+    display: inline-block;
+    text-decoration: none;
+    border: 1px solid #fff;
+    border-radius: 100%;
+    width: 42px;
+    height: 42px;
+    line-height: 42px;
+    margin: 40px 5px;
+    font-size: 2.px;
+    transition: .3s;
+}
+
+footer .up{
+    display: block;
+    width: 50px;
+    height: 50px;
+    background-color: rgba(19, 125, 197,.8);
+    color: #fff;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50);
+    top: -25px;
+    border-radius: 50%;
+    line-height: 50px;
+    font-size: 18px;
+}
+
+footer p{
+    font-size: 15px;
+    font-weight: normal;
+}
+
+/*responsive*/
+
+@media screen and (max-width: 980px){
+    nav {
+        display: none;
+    }
+    .nav-responsive{
+        display: block;
+    }
+    nav.responsive{
+        display: block;
+        position: absolute;
+        right: 0;
+        top: 75px;
+        background-color: #252a2e;
+        width: 180px;
+    }
+    nav.responsive ul {
+        display: block !important;
+    }
+    nav.responsive ul li{
+        border-bottom: 1px solid #fff;
+        padding: 10px 0;
+    }
+}
+
+@media screen and (max-width:700px) {
+    .aboutme .row{
+        display: block;
+    }
+    .aboutme .row .col{
+        width: fit-content;
+    }
+    .personalresume .row{
+        display: block;
+    }
+    .personalresume .row .col{
+        width: 90%;
+    }
+    .personalresume .row .right{
+        margin-left: 20px;
+    } 
+    .portfolioo .gallery{
+        display: block;
+        width: 100%;
+    }
+    .portfolioo .gallery .project{
+        max-width: 100%;
+    }
+    .portfolioo .gallery .project img{
+        width: 100%;
+    }
+    .contactt .row {
+        display: block;
+    }
+    .contactt .row .col{
+        width: 100%;
+    }
+
+
+
+    
+}
+
