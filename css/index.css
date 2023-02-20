@@ -207,6 +207,11 @@ html {
     margin-bottom: 10px;
 }
 
+.divv {
+    display: flex;
+    justify-content: center;
+}
+
 .aboutme button{
     cursor: pointer;
     background-color: transparent;
@@ -219,9 +224,13 @@ html {
     color: #fff;
     position: relative;
     z-index: 10;
+   
 }
 
-
+button a {
+    text-decoration: none;
+    color: #fff;
+}
 
 .aboutme button .overlay{
     position: absolute;
@@ -591,7 +600,7 @@ footer p{
     .aboutme .row{
         display: block;
     }
-    .aboutme .row .col{
+    .aboutme .row .col {
         width: fit-content;
     }
     .personalresume .row{
@@ -603,10 +612,22 @@ footer p{
     .personalresume .row .right{
         margin-left: 20px;
     } 
+    
+    .divv {
+        display: block;
+        width: 100%
+    }
+    .imgg {
+        height: 100%;
+        width: 100%;
+        object-fit: contain;
+    }
+  
     .portfolioo .gallery{
         display: block;
         width: 100%;
     }
+
     .portfolioo .gallery .project{
         max-width: 100%;
     }
