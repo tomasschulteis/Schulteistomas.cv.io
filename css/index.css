@@ -206,6 +206,10 @@ a {text-decoration: none;
     background-color: #137DC5;
 }
 
+.aboutme .row .col .content-tecnology.soft-skills .tecnology:hover{
+    background-color: #2cd612; 
+}
+
 .aboutme .row .col .content-tecnology .tecnology i{
     font-size: 30px;
     margin-bottom: 10px;
@@ -250,6 +254,9 @@ button a {
 .aboutme button:hover .overlay{
     width: 100%;
 }
+
+/*soft skill*/
+
 
 /* section-Personal Resume*/
 
