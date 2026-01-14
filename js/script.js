@@ -13,11 +13,11 @@ function showhidemenuu(){
 }
 
 function select(){
-    //hide the menu when you select an option
+    
     document.getElementById("nav").classList =""
     visiblemenu = false
 }
-// Variable global
+
 let currentLanguage = 'es'; 
 
 // Abrir/Cerrar Chat
@@ -33,7 +33,7 @@ function toggleChat() {
     }
 }
 
-// --- MENÚ PRINCIPAL ---
+//MENÚ PRINCIPAL 
 function setLanguage(lang) {
     currentLanguage = lang;
     
@@ -100,10 +100,10 @@ function addMessage(htmlContent, className) {
     chatContent.scrollTop = chatContent.scrollHeight;
 }
 
-// --- CEREBRO CON TODA LA DATA ---
+
 function getBotResponse(input) {
     
-    // ================= MODO ESPAÑOL =================
+    // MODO ESPAÑOL 
     if (currentLanguage === 'es') {
         
         // 1. SOBRE MÍ
@@ -143,8 +143,8 @@ function getBotResponse(input) {
                    "✅ Trabajo en Equipo";
         }
 
-        // 5. EDUCACIÓN
-        if (input.includes('educacion') || input.includes('educación') || input.includes('titulo') || input.includes('universidad')) {
+        // 5. EDUCACIÓN 
+        if (input.includes('educacion') || input.includes('educación') || input.includes('titulo') || input.includes('universidad') || input.includes('estudio')) {
             return "🎓 <strong>Educación:</strong><br><br>" +
                    "<strong>LICENCIATURA EN CIBERSEGURIDAD</strong><br>" +
                    "Universidad Raúl Scalabrini Ortiz (UNSO)<br>" +
@@ -179,21 +179,21 @@ function getBotResponse(input) {
                    "(Lectura, escucha y oral: Nivel Intermedio/Avanzado).";
         }
         
-        // CONTACTO
+        
         if (input.includes('contact') || input.includes('mail') || input.includes('info')) {
             return "📧 <strong>schulteis.tomas@gmail.com</strong><br>📍 Buenos Aires, Argentina.<br>¡Escribime para una entrevista!";
         }
         
-        // DESCARGAR CV ESPAÑOL
+       
         if (input.includes('cv') || input.includes('bajar') || input.includes('descargar')) {
             return "📄 <strong>Currículum Vitae:</strong><br>Hacé click para guardarlo:<br><br>👉 <a href='./document/Schulteis_Tomas_CV.pdf' download style='color:#4db5ff; font-weight:bold; text-decoration:underline;'>[DESCARGAR CV PDF]</a>";
         }
 
-        // FALLBACK
+        
         return "🤔 Mmm, no tengo esa información específica.<br><br>Para consultas puntuales, contactá a Tomás:<br>📧 <strong>schulteis.tomas@gmail.com</strong>";
     }
 
-    // ================= MODO INGLÉS =================
+    //MODO INGLÉS 
     if (currentLanguage === 'en') {
         
         if (input.includes('about')) return "<strong>About Me:</strong><br>Cybersecurity student (final year) and Front-End Developer. Solid background in security tools (Kali/Nmap), risk management and auditing.";
@@ -208,7 +208,7 @@ function getBotResponse(input) {
             return "🤝 <strong>Soft Skills:</strong><br>✅ Adaptability<br>✅ Organization<br>✅ Problem Solving<br>✅ Autonomy<br>✅ Troubleshooting<br>✅ Client Orientation<br>✅ Teamwork";
         }
 
-        if (input.includes('education')) {
+        if (input.includes('education') || input.includes('study') || input.includes('studies')) {
             return "🎓 <strong>Education:</strong><br><br><strong>Bachelor in Cybersecurity</strong><br>Universidad Raúl Scalabrini Ortiz (UNSO)<br>2022 | In Progress | Final Year.<br><br>I have acquired solid training in cybersecurity, developing skills in various tools and methodologies. I have experience using tools like Nmap, OpenSSL, Symantec Endpoint Protection, Kali linux, etc. which I have used to perform:<br><br>• Penetration Testing<br>• Vulnerability Analysis<br>• Incident Investigation<br>• Risk Management<br>• Network Security<br>• Endpoint Security<br>• Security Awareness Training<br>• Security Auditing";
         }
 

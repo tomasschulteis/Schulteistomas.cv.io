@@ -30,8 +30,8 @@ html {
 }
 
 .contenedor-header header .logo svg {
-    height: 40px; /* Le bajamos la altura (antes era 50px) */
-    width: auto;  /* El ancho se acomoda solo */
+    height: 40px; 
+    width: auto;  
 }
 
 .contenedor-header header ul {
@@ -660,19 +660,28 @@ footer .social a{
     transition: .3s;
 }
 
-footer .up{
+footer .up {
     display: block;
     width: 50px;
     height: 50px;
-    background-color: rgba(19, 125, 197,.8);
+    background-color: rgba(19, 125, 197, 0.8);
     color: #fff;
     position: absolute;
     left: 50%;
-    transform: translateX(-50);
+    
+    
+    transform: translateX(-50%); 
+    
     top: -25px;
     border-radius: 50%;
-    line-height: 50px;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-size: 18px;
+    text-decoration: none; 
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5); 
 }
 
 footer p{
@@ -792,7 +801,82 @@ footer p{
     
 }
 
-/* ================= CHATBOT STYLES ROBOT EDITION ================= */
+
+#contact {
+    background-color: #1e2326; 
+    color: #fff;           
+    padding: 50px 20px;        
+    text-align: center;        
+}
+
+
+#contact h2 {
+    font-size: 48px;          
+    font-family: 'Righteous', cursive; 
+    text-align: center;
+    padding: 20px 0;           
+    margin-bottom: 20px;      
+}
+
+
+
+.contact-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.contact-text {
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+.contact-email {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #137DC5; 
+    text-decoration: none;
+    transition: 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.contact-email:hover {
+    color: #fff;
+    text-shadow: 0 0 15px #137DC5;
+    transform: scale(1.05);
+}
+
+
+.video-emoji-container {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-top: 20px;
+    
+   
+    border: 4px solid #137DC5; 
+    
+    
+    box-shadow: 0 0 25px rgba(19, 125, 197, 0.7); 
+    
+    background-color: #1e2326; 
+}
+
+
+.video-emoji-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scale(1.35);
+    transform-origin: center center;
+}
 
 .chat-container {
     position: fixed;
@@ -811,7 +895,7 @@ footer p{
     transform: translateY(0);
 }
 
-/* BOTÓN ROBOT */
+
 .chat-toggler {
     width: 70px;
     height: 70px;
@@ -839,9 +923,9 @@ footer p{
     fill: #137DC5;
 }
 
-/* LA CAJA DE CHAT */
+
 .chat-box {
-    display: none; /* JS lo cambia a flex */
+    display: none; 
     width: 350px;
     height: 450px;
     background-color: #1e2326;
@@ -855,7 +939,7 @@ footer p{
     right: 0;
 }
 
-/* ESTOS SON LOS ESTILOS QUE FALTABAN: */
+
 
 .chat-header {
     background-color: #137DC5;
@@ -944,19 +1028,19 @@ footer p{
     color: #fff;
 }
 
-/* ================= CHATBOT FULL STYLES ================= */
+/* CHATBOT  */
 
-/* Contenedor Principal */
+
 .chat-container {
     position: fixed;
     bottom: 50px;
     right: 30px;
     z-index: 1000;
-    transform: translateY(30px); /* Empieza un poco escondido */
+    transform: translateY(30px); 
     transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
     display: flex;
     flex-direction: column;
-    align-items: flex-end; /* Alinea todo a la derecha */
+    align-items: flex-end; 
 }
 
 .chat-container:hover {
@@ -967,15 +1051,14 @@ footer p{
     transform: translateY(0);
 }
 
-/* GLOBO DE TEXTO "HEY PREGUNTAME" */
-/* ================= GLOBO DE LLAMADA A LA ACCIÓN (AJUSTADO A LA IZQUIERDA) ================= */
+
 
 .chat-callout {
     position: absolute;
     bottom: 85px;
     
-    /* CAMBIO 1: Lo empujamos más a la izquierda */
-    right: 50px; /* Antes era 0, ahora lo separamos del borde derecho */
+   
+    right: 50px; 
     
     width: 200px;
     background-color: #fff;
@@ -991,14 +1074,13 @@ footer p{
     pointer-events: none;
 }
 
-/* El triangulito que apunta al robot */
+
 .chat-callout::after {
     content: '';
     position: absolute;
     bottom: -8px;
     
-    /* CAMBIO 2: Movemos la flechita para que siga apuntando al robot */
-    right: 10px; /* La pegamos más al borde derecho del globo */
+    right: 10px; 
     
     width: 0;
     height: 0;
@@ -1012,14 +1094,14 @@ footer p{
     50% { transform: translateY(-8px); }
 }
 
-/* Si el chat está abierto, ocultamos el globo */
+
 .chat-container.chat-active .chat-callout {
     opacity: 0;
     visibility: hidden;
     animation: none;
 }
 
-/* BOTÓN DEL ROBOT */
+
 .chat-toggler {
     width: 70px;
     height: 70px;
@@ -1033,7 +1115,7 @@ footer p{
     align-items: center;
     padding: 12px;
     transition: background-color 0.3s;
-    position: relative; /* Importante para el z-index */
+    position: relative; 
     z-index: 1001;
 }
 
@@ -1046,9 +1128,9 @@ footer p{
     transition: fill 0.3s;
 }
 
-/* CAJA DE CHAT (CONTENIDO) */
+
 .chat-box {
-    display: none; /* Se activa con JS */
+    display: none; 
     width: 350px;
     height: 450px;
     background-color: #1e2326;
@@ -1063,7 +1145,7 @@ footer p{
     z-index: 1000;
 }
 
-/* Header del chat */
+
 .chat-header {
     background-color: #137DC5;
     padding: 15px;
@@ -1076,7 +1158,7 @@ footer p{
 .chat-header h3 { font-family: 'Righteous'; font-size: 16px; margin: 0; }
 .chat-header button { background: none; border: none; color: #fff; font-size: 18px; cursor: pointer; }
 
-/* Área de mensajes */
+
 .chat-content {
     flex: 1;
     padding: 15px;
@@ -1090,7 +1172,7 @@ footer p{
 .bot-message { background: #252a2e; color: #fff; align-self: flex-start; border: 1px solid #137DC5; }
 .user-message { background: #137DC5; color: #fff; align-self: flex-end; }
 
-/* Input */
+
 .chat-input {
     padding: 10px;
     background: #252a2e;
@@ -1100,11 +1182,11 @@ footer p{
 .chat-input input { flex: 1; background: transparent; border: none; color: #fff; padding: 10px; outline: none; }
 .chat-input button { background: none; border: none; color: #137DC5; font-size: 18px; cursor: pointer; }
 
-/* Botones de idioma dentro del chat */
+
 .chat-languages {
     display: flex;
     gap: 10px;
-    justify-content: flex-start; /* Alineados a la izquierda */
+    justify-content: flex-start; 
 }
 
 .chat-languages button {
@@ -1112,7 +1194,7 @@ footer p{
     border: 1px solid #137DC5;
     color: #fff;
     padding: 6px 12px;
-    border-radius: 20px; /* Bordes redondos tipo "chip" */
+    border-radius: 20px; 
     cursor: pointer;
     font-size: 12px;
     transition: 0.3s;
@@ -1120,10 +1202,10 @@ footer p{
 
 .chat-languages button:hover {
     background-color: #137DC5;
-    transform: scale(1.05); /* Efecto pequeño de crecimiento */
+    transform: scale(1.05); 
 }
 
-/* Estilos para el Menú de Opciones (Estilo Dark/Neon) */
+
 .chat-options {
     display: flex;
     flex-wrap: wrap;
@@ -1132,10 +1214,10 @@ footer p{
 }
 
 .chat-options button {
-    /* ELIMINADO EL FONDO BLANCO */
-    background-color: rgba(30, 35, 38, 0.8); /* Fondo oscuro semitransparente */
-    border: 1px solid #137DC5; /* Borde Azul Neon */
-    color: #fff; /* Texto blanco */
+    
+    background-color: rgba(30, 35, 38, 0.8); 
+    border: 1px solid #137DC5; 
+    color: #fff; 
     padding: 8px 12px;
     border-radius: 20px;
     cursor: pointer;
@@ -1146,39 +1228,37 @@ footer p{
 }
 
 .chat-options button:hover {
-    background-color: #137DC5; /* Al pasar el mouse se llena de azul */
+    background-color: #137DC5; 
     color: #fff;
-    box-shadow: 0 0 10px #137DC5; /* Brillo neon */
+    box-shadow: 0 0 10px #137DC5; 
     transform: translateY(-2px);
 }
 
-/* ================= SCROLLBAR PERSONALIZADO (Barrita de desplazamiento) ================= */
 
-/* 1. Ancho de la barra (Chrome, Safari, Edge) */
 .chat-content::-webkit-scrollbar {
-    width: 8px; /* Más finita y elegante */
+    width: 8px; 
 }
 
-/* 2. El fondo de la barra (Track) */
+
 .chat-content::-webkit-scrollbar-track {
-    background: #1e2326; /* Mismo color oscuro que el fondo del chat */
+    background: #1e2326; 
     border-radius: 4px;
 }
 
-/* 3. La parte que se mueve (Thumb) */
+
 .chat-content::-webkit-scrollbar-thumb {
-    background-color: #137DC5; /* Tu Azul Neon característico */
-    border-radius: 10px;       /* Bordes bien redondeados */
-    border: 2px solid #1e2326; /* Un pequeño borde oscuro para que parezca flotar */
+    background-color: #137DC5; 
+    border-radius: 10px;      
+    border: 2px solid #1e2326; 
 }
 
-/* 4. Efecto al pasar el mouse por la barra */
+
 .chat-content::-webkit-scrollbar-thumb:hover {
-    background-color: #4db5ff; /* Se ilumina un poco más claro */
+    background-color: #4db5ff;
 }
 
-/* 5. Soporte para Firefox (Que usa otra sintaxis) */
+
 .chat-content {
-    scrollbar-width: thin;          /* Barra fina */
-    scrollbar-color: #137DC5 #1e2326; /* Azul sobre Oscuro */
+    scrollbar-width: thin;          
+    scrollbar-color: #137DC5 #1e2326; 
 }
