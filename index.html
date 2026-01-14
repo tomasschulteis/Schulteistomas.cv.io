@@ -46,6 +46,19 @@
                 <a href="https://github.com/tomasschulteis" target="_blank"><i class="fa-brands fa-github" title="Github"></i></a>
                 <a href="mailto:schulteis.tomas@gmail.com" target="_blank"><i class="fa-solid fa-envelope" title="Email"></i></a>
             </div>
+                  <div class="cv-container">
+                     <a href="./document/Schulteis_Tomas_Resume.pdf" download class="btn-neon">
+                      Download CV English <i class="fa-solid fa-circle-arrow-down"></i>
+                      <span class="overlay"></span>
+                     </a>
+                      <a href="./document/Schulteis_Tomas_CV.pdf" download class="btn-neon">
+                          Descargar CV Español <i class="fa-solid fa-circle-arrow-down"></i>
+                           <span class="overlay"></span>
+                     </a>
+                  </div>
+                  <a href="#aboutme" class="btn-ver-mas">
+                     See more <i class="fa-solid fa-angles-down"></i>
+                  </a>
         </div>
     </section>
 
@@ -404,6 +417,52 @@
         </div>
         <p>SchulteisTomas©copyright </p>
     </footer>
+    
+ <div class="chat-container" id="chatContainer">
+    <div class="chat-box" id="chatBox">
+        <div class="chat-header">
+            <h3>Asistente Virtual 🤖</h3>
+            <button onclick="toggleChat()">✖</button>
+        </div>
+        
+        <div class="chat-content" id="chatContent">
+         <div class="message bot-message">
+              <p>¡Hola! Soy el asistente de Tomás. 👋<br>¿Tenés alguna duda?</p>
+        
+             <div style="margin-top: 15px; padding-top: 10px; border-top: 1px solid #444;">
+                 <p style="font-size: 12px; margin-bottom: 5px; color: #ccc;">Select language / Idioma:</p>
+                 <div class="chat-languages">
+                      <button onclick="setLanguage('es')">🇪🇸 Español</button>
+                     <button onclick="setLanguage('en')">🇺🇸 English</button>
+                 </div>
+             </div>
+          </div>
+       </div>
+        
+        <div class="chat-input">
+            <input type="text" id="userInput" placeholder="Escribí aquí..." onkeypress="handleKeyPress(event)">
+            <button onclick="sendMessage()"><i class="fa-solid fa-paper-plane"></i></button>
+        </div>
+    </div>
+
+    <div class="chat-callout">
+       <p>Hola! Soy Chatbit👋 ¿Tenés alguna duda sobre Tomas? <strong>¡Preguntame!</strong></p>
+    </div>
+
+    <button class="chat-toggler" onclick="toggleChat()">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="40" height="40">
+            <g fill="#FFFFFF">
+                <path d="M48,16H16c-4.4,0-8,3.6-8,8v24c0,4.4,3.6,8,8,8h32c4.4,0,8-3.6,8-8V24C56,19.6,52.4,16,48,16z"/>
+                <circle cx="22" cy="30" r="4" fill="#1e2326"/> 
+                <circle cx="42" cy="30" r="4" fill="#1e2326"/> 
+                <path d="M20,42c0,0,6,6,12,6s12-6,12-6" stroke="#1e2326" stroke-width="3" fill="none" stroke-linecap="round"/>
+                <rect x="30" y="8" width="4" height="8"/>
+                <circle cx="32" cy="6" r="4"/>
+            </g>
+        </svg>
+    </button>
+  </div>
+
     <script src="./js/script.js"></script>
 </body>
 

@@ -21,12 +21,17 @@ html {
 }
 
 .contenedor-header header{
-    max-width: 1100px;
+   max-width: 1100px;
     margin: auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 20px;
+    padding: 5px 20px;
+}
+
+.contenedor-header header .logo svg {
+    height: 40px; /* Le bajamos la altura (antes era 50px) */
+    width: auto;  /* El ancho se acomoda solo */
 }
 
 .contenedor-header header ul {
@@ -78,12 +83,14 @@ html {
 }
 
 .home .content-banner img {
-    margin-top: 40px;
-    border: 10px solid #137DC5;
+   margin-top: 40px; 
+    border: 8px solid #137DC5; 
     display: block;
-    width: 80%;
+    width: 160px;
+    height: 160px;
+    object-fit: cover;
     margin: auto;
-    border-radius: 100%;
+    border-radius: 50%;
 }
 
 .home .content-banner h1{
@@ -117,6 +124,95 @@ html {
 
 a {text-decoration: none;
    color: #fff;
+}
+
+
+.home {
+  
+    height: 100vh;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden; 
+
+    
+    background:
+        
+        url("data:image/svg+xml,%3Csvg width='400' height='400' viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='50' cy='50' r='2' fill='white' opacity='0.4'/%3E%3Ccircle cx='250' cy='350' r='1.5' fill='white' opacity='0.3'/%3E%3Ccircle cx='350' cy='100' r='2' fill='white' opacity='0.4'/%3E%3Crect x='150' y='200' width='4' height='4' fill='white' opacity='0.3' transform='rotate(45 150 200)'/%3E%3Cpath d='M 100 300 L 105 300 M 102.5 297 L 102.5 303' stroke='white' stroke-width='1' opacity='0.3'/%3E%3C/svg%3E") repeat,
+        
+        
+        linear-gradient(to top, rgba(30,35,38,.8), rgba(30,35,38,1)),
+        
+        
+        url(../assets/img/fondocv.jpg);
+
+   
+    background-size: 400px 400px, cover, cover;
+
+  
+    background-position: 0 0, center center, center center;
+
+   
+    animation: moverFondoParticulas 80s linear infinite;
+}
+
+
+.home .content-banner {
+    position: relative;
+    z-index: 10; 
+}
+
+.home::before,
+.home::after {
+    content: '';
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    filter: blur(100px);
+    opacity: 0.5;
+    z-index: 2;
+    
+    
+   
+    animation: rebotarLuces 25s ease-in-out infinite alternate;
+}
+
+
+.home::before {
+    background: #137DC5;
+    top: -150px;
+    left: -150px;
+    animation-delay: -2s; 
+}
+
+
+.home::after {
+    background: #00d2ff;
+    bottom: -150px;
+    right: -150px;
+}
+
+
+@keyframes moverFondoParticulas {
+    0% { background-position: 0 0, center center, center center; }
+    100% { background-position: 400px 400px, center center, center center; }
+}
+
+
+@keyframes rebotarLuces {
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+    50% {
+       
+        transform: translate(30vw, 15vh) scale(1.2);
+    }
+    100% {
+        
+        transform: translate(-30vw, 10vh) scale(0.9);
+    }
 }
 
 /* About Me */
@@ -502,7 +598,8 @@ button a {
 
 
 
-.contactt button {
+.contactt button, 
+.btn-neon {
     cursor: pointer;
     background-color: transparent;
     border: 2px solid #fff;
@@ -517,7 +614,8 @@ button a {
     
 }
 
-.contactt button .overlay {
+.contactt button .overlay, 
+.btn-neon .overlay {
     position: absolute;
     top: 0;
     left: 0;
@@ -528,7 +626,8 @@ button a {
     transition: 1s;
 }
 
-.contactt button:hover .overlay {
+.contactt button:hover .overlay, 
+.btn-neon:hover .overlay {
     width: 100%;
 }
 
@@ -607,6 +706,42 @@ footer p{
     }
 }
 
+.btn-ver-mas {
+    display: inline-block;
+    background-color: rgba(19, 125, 197, .8); 
+    color: #fff;
+    padding: 12px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2); 
+    
+    
+    animation: flotar 2s ease-in-out infinite;
+}
+
+
+.btn-ver-mas:hover {
+    background-color: rgb(19, 125, 197); 
+    
+    animation-play-state: paused; 
+}
+
+@keyframes flotar {
+    0% {
+       
+        transform: translateY(0);
+    }
+    50% {
+        
+        transform: translateY(10px);
+    }
+    100% {
+        
+        transform: translateY(0);
+    }
+}
 @media screen and (max-width:700px) {
     .aboutme .row{
         display: block;
@@ -657,3 +792,393 @@ footer p{
     
 }
 
+/* ================= CHATBOT STYLES ROBOT EDITION ================= */
+
+.chat-container {
+    position: fixed;
+    bottom: 50px;
+    right: 30px;
+    z-index: 1000;
+    transform: translateY(30px);
+    transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.chat-container:hover {
+    transform: translateY(0) scale(1.05);
+}
+
+.chat-container.chat-active {
+    transform: translateY(0);
+}
+
+/* BOTÓN ROBOT */
+.chat-toggler {
+    width: 70px;
+    height: 70px;
+    background-color: #137DC5;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(19, 125, 197, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 12px;
+    transition: background-color 0.3s;
+}
+
+.chat-toggler:hover {
+    background-color: #1e2326;
+    box-shadow: 0 0 20px #137DC5;
+}
+
+.chat-toggler svg path {
+    transition: fill 0.3s;
+}
+.chat-toggler:hover svg path {
+    fill: #137DC5;
+}
+
+/* LA CAJA DE CHAT */
+.chat-box {
+    display: none; /* JS lo cambia a flex */
+    width: 350px;
+    height: 450px;
+    background-color: #1e2326;
+    border: 2px solid #137DC5;
+    border-radius: 15px;
+    overflow: hidden;
+    flex-direction: column;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    position: absolute;
+    bottom: 90px;
+    right: 0;
+}
+
+/* ESTOS SON LOS ESTILOS QUE FALTABAN: */
+
+.chat-header {
+    background-color: #137DC5;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+}
+
+.chat-header h3 {
+    font-size: 16px;
+    margin: 0;
+    font-family: 'Righteous', sans-serif;
+}
+
+.chat-header button {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.chat-content {
+    flex: 1;
+    padding: 15px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Mensajes */
+.message {
+    max-width: 80%;
+    padding: 10px 15px;
+    border-radius: 10px;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.bot-message {
+    background-color: #252a2e;
+    color: #fff;
+    align-self: flex-start;
+    border-bottom-left-radius: 0;
+    border: 1px solid #137DC5;
+}
+
+.user-message {
+    background-color: #137DC5;
+    color: #fff;
+    align-self: flex-end;
+    border-bottom-right-radius: 0;
+}
+
+/* Input area */
+.chat-input {
+    padding: 10px;
+    background-color: #252a2e;
+    display: flex;
+    border-top: 1px solid #333;
+}
+
+.chat-input input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    color: #fff;
+    padding: 10px;
+    outline: none;
+}
+
+.chat-input button {
+    background: none;
+    border: none;
+    color: #137DC5;
+    font-size: 18px;
+    cursor: pointer;
+    padding: 0 10px;
+    transition: 0.3s;
+}
+
+.chat-input button:hover {
+    color: #fff;
+}
+
+/* ================= CHATBOT FULL STYLES ================= */
+
+/* Contenedor Principal */
+.chat-container {
+    position: fixed;
+    bottom: 50px;
+    right: 30px;
+    z-index: 1000;
+    transform: translateY(30px); /* Empieza un poco escondido */
+    transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; /* Alinea todo a la derecha */
+}
+
+.chat-container:hover {
+    transform: translateY(0) scale(1.05);
+}
+
+.chat-container.chat-active {
+    transform: translateY(0);
+}
+
+/* GLOBO DE TEXTO "HEY PREGUNTAME" */
+/* ================= GLOBO DE LLAMADA A LA ACCIÓN (AJUSTADO A LA IZQUIERDA) ================= */
+
+.chat-callout {
+    position: absolute;
+    bottom: 85px;
+    
+    /* CAMBIO 1: Lo empujamos más a la izquierda */
+    right: 50px; /* Antes era 0, ahora lo separamos del borde derecho */
+    
+    width: 200px;
+    background-color: #fff;
+    color: #1e2326;
+    padding: 12px 15px;
+    border-radius: 15px;
+    border-bottom-right-radius: 2px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    font-size: 14px;
+    text-align: center;
+    animation: flotarCallout 3s ease-in-out infinite;
+    transition: opacity 0.3s, visibility 0.3s;
+    pointer-events: none;
+}
+
+/* El triangulito que apunta al robot */
+.chat-callout::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    
+    /* CAMBIO 2: Movemos la flechita para que siga apuntando al robot */
+    right: 10px; /* La pegamos más al borde derecho del globo */
+    
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 8px 8px 0 8px;
+    border-color: #fff transparent transparent transparent;
+}
+
+@keyframes flotarCallout {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+}
+
+/* Si el chat está abierto, ocultamos el globo */
+.chat-container.chat-active .chat-callout {
+    opacity: 0;
+    visibility: hidden;
+    animation: none;
+}
+
+/* BOTÓN DEL ROBOT */
+.chat-toggler {
+    width: 70px;
+    height: 70px;
+    background-color: #137DC5;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(19, 125, 197, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 12px;
+    transition: background-color 0.3s;
+    position: relative; /* Importante para el z-index */
+    z-index: 1001;
+}
+
+.chat-toggler:hover {
+    background-color: #1e2326;
+    box-shadow: 0 0 20px #137DC5;
+}
+
+.chat-toggler svg g {
+    transition: fill 0.3s;
+}
+
+/* CAJA DE CHAT (CONTENIDO) */
+.chat-box {
+    display: none; /* Se activa con JS */
+    width: 350px;
+    height: 450px;
+    background-color: #1e2326;
+    border: 2px solid #137DC5;
+    border-radius: 15px;
+    overflow: hidden;
+    flex-direction: column;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    position: absolute;
+    bottom: 90px;
+    right: 0;
+    z-index: 1000;
+}
+
+/* Header del chat */
+.chat-header {
+    background-color: #137DC5;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+}
+
+.chat-header h3 { font-family: 'Righteous'; font-size: 16px; margin: 0; }
+.chat-header button { background: none; border: none; color: #fff; font-size: 18px; cursor: pointer; }
+
+/* Área de mensajes */
+.chat-content {
+    flex: 1;
+    padding: 15px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.message { padding: 10px; border-radius: 10px; font-size: 14px; max-width: 80%; }
+.bot-message { background: #252a2e; color: #fff; align-self: flex-start; border: 1px solid #137DC5; }
+.user-message { background: #137DC5; color: #fff; align-self: flex-end; }
+
+/* Input */
+.chat-input {
+    padding: 10px;
+    background: #252a2e;
+    display: flex;
+    border-top: 1px solid #333;
+}
+.chat-input input { flex: 1; background: transparent; border: none; color: #fff; padding: 10px; outline: none; }
+.chat-input button { background: none; border: none; color: #137DC5; font-size: 18px; cursor: pointer; }
+
+/* Botones de idioma dentro del chat */
+.chat-languages {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-start; /* Alineados a la izquierda */
+}
+
+.chat-languages button {
+    background-color: transparent;
+    border: 1px solid #137DC5;
+    color: #fff;
+    padding: 6px 12px;
+    border-radius: 20px; /* Bordes redondos tipo "chip" */
+    cursor: pointer;
+    font-size: 12px;
+    transition: 0.3s;
+}
+
+.chat-languages button:hover {
+    background-color: #137DC5;
+    transform: scale(1.05); /* Efecto pequeño de crecimiento */
+}
+
+/* Estilos para el Menú de Opciones (Estilo Dark/Neon) */
+.chat-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.chat-options button {
+    /* ELIMINADO EL FONDO BLANCO */
+    background-color: rgba(30, 35, 38, 0.8); /* Fondo oscuro semitransparente */
+    border: 1px solid #137DC5; /* Borde Azul Neon */
+    color: #fff; /* Texto blanco */
+    padding: 8px 12px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 11px;
+    transition: all 0.3s ease;
+    flex: 1 1 auto;
+    text-align: center;
+}
+
+.chat-options button:hover {
+    background-color: #137DC5; /* Al pasar el mouse se llena de azul */
+    color: #fff;
+    box-shadow: 0 0 10px #137DC5; /* Brillo neon */
+    transform: translateY(-2px);
+}
+
+/* ================= SCROLLBAR PERSONALIZADO (Barrita de desplazamiento) ================= */
+
+/* 1. Ancho de la barra (Chrome, Safari, Edge) */
+.chat-content::-webkit-scrollbar {
+    width: 8px; /* Más finita y elegante */
+}
+
+/* 2. El fondo de la barra (Track) */
+.chat-content::-webkit-scrollbar-track {
+    background: #1e2326; /* Mismo color oscuro que el fondo del chat */
+    border-radius: 4px;
+}
+
+/* 3. La parte que se mueve (Thumb) */
+.chat-content::-webkit-scrollbar-thumb {
+    background-color: #137DC5; /* Tu Azul Neon característico */
+    border-radius: 10px;       /* Bordes bien redondeados */
+    border: 2px solid #1e2326; /* Un pequeño borde oscuro para que parezca flotar */
+}
+
+/* 4. Efecto al pasar el mouse por la barra */
+.chat-content::-webkit-scrollbar-thumb:hover {
+    background-color: #4db5ff; /* Se ilumina un poco más claro */
+}
+
+/* 5. Soporte para Firefox (Que usa otra sintaxis) */
+.chat-content {
+    scrollbar-width: thin;          /* Barra fina */
+    scrollbar-color: #137DC5 #1e2326; /* Azul sobre Oscuro */
+}
